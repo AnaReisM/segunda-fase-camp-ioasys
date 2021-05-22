@@ -28,7 +28,7 @@ export const Background = styled.div`
   background-repeat: no-repeat;
   background-position: top right;
   background-size: 500px;
-  height: 100vh;
+  min-height: 100vh;
 `;
 
 export const Container = styled.div`

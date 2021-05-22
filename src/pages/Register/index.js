@@ -12,11 +12,20 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
   const [error, setError] = useState(false);
+  const [errorPassword, setErrorPassword] = useState(false);
 
   const submit = () => {
     setError(false);
+    setErrorPassword(false);
+
+    if (password !== password2) {
+      setErrorPassword(true);
+      return;
+    }
+
     axios
-      .post('https://apicamp.herokuapp.com/api/v1/auth/signin', {
+      .post('https://apicamp.herokuapp.com/api/v1/auth/signup', {
+        email,
         name,
         password,
       })
@@ -70,6 +79,9 @@ const Register = () => {
             onChange={(e) => setPassword2(e.target.value)}
             type="password"
           ></Input>
+          {errorPassword ? (
+            <Error>Confirmação de senha incorreta.</Error>
+          ) : null}
           {error ? <Error>Email e/ou senha incorretos.</Error> : null}
           <Button onClick={submit}>
             Próximo <img src={icon} alt="" />
