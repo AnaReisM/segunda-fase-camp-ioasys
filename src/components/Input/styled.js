@@ -20,4 +20,11 @@ export const InputField = styled.input`
   background: #e1e1e1;
   border-radius: 16px;
   margin-bottom: 60px;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    margin: 0;
+  }
 `;
