@@ -1,8 +1,8 @@
 import {
-  Header,
   StyledLink,
   Hero,
   Title,
+  HeroText,
   Text,
   Button,
   Content,
@@ -13,29 +13,49 @@ import {
   CardComments,
   PositionCard,
   Footer,
+  Background,
+  PhoneContainer,
+  PhoneImg,
 } from './styled';
+import Header from '../../components/Header';
+import google from './googleplay.png';
+import apple from './appstore.png';
+import phone from './mockup phone.png';
 
 const Home = () => (
-  <div>
+  <Background>
     <Header>
       <StyledLink to="/login">Entrar</StyledLink>
       <StyledLink to="/register">Cadastrar</StyledLink>
     </Header>
     <Hero>
       <Content>
-        <Title>
-          Headline 1 <br /> linha 2
-        </Title>
-        <Text>texto akdkfkadjkfa</Text>
+        <Title>Encontre profissionais que você pode confiar</Title>
+        <HeroText>
+          A consul.t foi desenvolvida pensando em todas as pessoas que sentem
+          algum tipo de receio quando precisam agendar uma consulta, aqui você
+          pode ter certeza que terá sua identidade respeitada{' '}
+        </HeroText>
       </Content>
-      <div>
-        <Button>Download</Button>
-        <Button>Download</Button>
-      </div>
+      <PhoneContainer>
+        <PhoneImg src={phone} alt="" />
+        <div>
+          <a
+            href="https://www.apple.com/br/app-store/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Button src={apple}></Button>
+          </a>
+          <a href="https://play.google.com/" target="_blank" rel="noreferrer">
+            <Button src={google}></Button>
+          </a>
+        </div>
+      </PhoneContainer>
     </Hero>
     <SectionText>
       <ContentWrapper>
-        <Text>Como Funciona</Text>
+        <Text>Como a consul.t funciona?</Text>
         <Description>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
           euismod ultrices felis mattis. Ac pellentesque eu purus duis turpis
@@ -64,7 +84,7 @@ const Home = () => (
       </PositionCard>
     </SectionComments>
     <Footer></Footer>
-  </div>
+  </Background>
 );
 
 export default Home;

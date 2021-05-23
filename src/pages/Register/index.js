@@ -14,7 +14,8 @@ const Register = () => {
   const [error, setError] = useState(false);
   const [errorPassword, setErrorPassword] = useState(false);
 
-  const submit = () => {
+  const submit = (e) => {
+    e.preventDefault();
     setError(false);
     setErrorPassword(false);
 
@@ -45,24 +46,28 @@ const Register = () => {
       <Header></Header>
       <Container>
         <Title>Crie sua conta</Title>
-        <Form>
+        <Form onSubmit={submit}>
           <Input
             label="Nome e Sobrenome"
             placeholder="Digite aqui seu nome e sobrenome"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            required
           ></Input>
           <Input
+            type="email"
             label="E-mail"
             placeholder="Digite aqui seu e-mail"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           ></Input>
           <Input
             label="CRP"
             placeholder="Digite aqui seu CRP"
             value={crp}
             onChange={(e) => setCrp(e.target.value)}
+            required
             type="number"
           ></Input>
           <Input
@@ -70,6 +75,7 @@ const Register = () => {
             placeholder="Digite aqui sua senha (min. 8 caracteres)"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
             type="password"
           ></Input>
           <Input
@@ -77,13 +83,14 @@ const Register = () => {
             placeholder="Digite novamente sua senha (min. 8 caracteres)"
             value={password2}
             onChange={(e) => setPassword2(e.target.value)}
+            required
             type="password"
           ></Input>
           {errorPassword ? (
             <Error>Confirmação de senha incorreta.</Error>
           ) : null}
           {error ? <Error>Email e/ou senha incorretos.</Error> : null}
-          <Button onClick={submit}>
+          <Button type="submit">
             Próximo <img src={icon} alt="" />
           </Button>
         </Form>

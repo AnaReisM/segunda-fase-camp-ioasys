@@ -10,7 +10,9 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
 
-  const submit = () => {
+  const submit = (e) => {
+    e.preventDefault();
+
     setError(false);
     axios
       .post('https://apicamp.herokuapp.com/api/v1/auth/signin', {
@@ -33,12 +35,14 @@ const Login = () => {
       <Header></Header>
       <Container>
         <Title>Faça seu Login</Title>
-        <Form>
+        <Form onSubmit={submit}>
           <Input
+            type="email"
             label="E-mail"
             placeholder="Digite aqui seu e-mail"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           ></Input>
           <Input
             label="Senha"
@@ -46,9 +50,10 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type="password"
+            required
           ></Input>
           {error ? <Error>Email e/ou senha incorretos.</Error> : null}
-          <Button onClick={submit}>
+          <Button type="submit">
             Entrar <img src={icon} alt="" />
           </Button>
         </Form>

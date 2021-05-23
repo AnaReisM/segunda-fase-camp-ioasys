@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 const mobileSize = '720px';
 
@@ -40,7 +39,7 @@ export const Container = styled.div`
   } ;
 `;
 
-export const Form = styled.div`
+export const Form = styled.form`
   background: #f6e29d;
   box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.25);
   border-radius: 40px;
