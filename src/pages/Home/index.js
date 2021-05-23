@@ -56,7 +56,7 @@ const Home = () => (
     <SectionText>
       <ContentWrapper>
         <Text>Como a consul.t funciona?</Text>
-        <Description>
+        {/* <Description>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
           euismod ultrices felis mattis. Ac pellentesque eu purus duis turpis
           adipiscing dolor ac fermentum leo vitae in. Lorem ipsum dolor sit
@@ -71,10 +71,10 @@ const Home = () => (
           amet, consectetur adipiscing elit. Viverra euismod ultrices felis
           mattis. Ac pellentesque eu purus duis turpis adipiscing dolor ac
           fermentum leo vitae in.
-        </Description>
+        </Description> */}
       </ContentWrapper>
     </SectionText>
-    <SectionComments>
+    {/* <SectionComments>
       <Text centered>O que estão dizendo por aí</Text>
       <PositionCard>
         <CardComments></CardComments>
@@ -82,7 +82,7 @@ const Home = () => (
         <CardComments></CardComments>
         <CardComments></CardComments>
       </PositionCard>
-    </SectionComments>
+    </SectionComments> */}
     <Footer></Footer>
   </Background>
 );

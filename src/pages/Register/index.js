@@ -2,8 +2,15 @@ import axios from 'axios';
 import { useState } from 'react';
 import Header from '../../components/Header';
 import Input from '../../components/Input';
-import { Title, Container, Form, Button, Background, Error } from './styled';
-import icon from './Vector.png';
+import {
+  Title,
+  Container,
+  Form,
+  Button,
+  Background,
+  Error,
+} from '../../components/FormComponents/styled';
+import icon from '../../components/FormComponents/Vector.png';
 
 const Register = () => {
   const [name, setName] = useState('');

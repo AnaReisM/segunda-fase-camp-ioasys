@@ -64,6 +64,8 @@ export const HeroText = styled.p`
 export const Text = styled.p`
   font-size: 36px;
   margin-bottom: 20px;
+  color: #fefefe;
+
   ${(props) => {
     if (props.centered === true) {
       return 'text-align: center;';
@@ -115,7 +117,9 @@ export const SectionText = styled.section`
 `;
 
 export const ContentWrapper = styled.div`
-  width: 40%;
+  //width: 40%;
+  width: 100%;
+  height: 820px;
 
   @media (max-width: ${mobileSize}) {
     width: 100%;
@@ -162,5 +166,5 @@ export const PositionCard = styled.div`
 export const Footer = styled.footer`
   width: 100%;
   height: 250px;
-  background-color: #c4c4c4;
+  background-color: #e5e5e5;
 `;
