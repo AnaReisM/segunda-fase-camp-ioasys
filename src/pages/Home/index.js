@@ -12,22 +12,28 @@ import {
   SectionComments,
   CardComments,
   PositionCard,
-  Footer,
   Background,
   PhoneContainer,
   PhoneImg,
+  StyledVector,
+  PillMargin,
 } from './styled';
 import Header from '../../components/Header';
 import google from './googleplay.png';
 import apple from './appstore.png';
 import phone from './mockup phone.png';
 import Pill from '../../components/Pill';
+import Vector from '../../components/FormComponents/Vector.png';
 
 const Home = () => (
   <Background>
     <Header>
-      <Pill color="#6C8DFF">Entrar</Pill>
-      <Pill color="#A864FF">Cadastrar</Pill>
+      <PillMargin>
+        <Pill color="#6C8DFF">Cadastre-se</Pill>
+        <Pill color="#A864FF" active>
+          Login <StyledVector src={Vector} alt="" />
+        </Pill>
+      </PillMargin>
     </Header>
     <Hero>
       <Content>
@@ -57,22 +63,15 @@ const Home = () => (
     <SectionText>
       <ContentWrapper>
         <Text>Como a consul.t funciona?</Text>
-        {/* <Description>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
-          euismod ultrices felis mattis. Ac pellentesque eu purus duis turpis
-          adipiscing dolor ac fermentum leo vitae in. Lorem ipsum dolor sit
-          amet, consectetur adipiscing elit. Viverra euismod ultrices felis
-          mattis. Ac pellentesque eu purus duis turpis adipiscing dolor ac
-          fermentum leo vitae in.
-        </Description>
         <Description>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
-          euismod ultrices felis mattis. Ac pellentesque eu purus duis turpis
-          adipiscing dolor ac fermentum leo vitae in. Lorem ipsum dolor sit
-          amet, consectetur adipiscing elit. Viverra euismod ultrices felis
-          mattis. Ac pellentesque eu purus duis turpis adipiscing dolor ac
-          fermentum leo vitae in.
-        </Description> */}
+          Profissionais da área de psicologia podem se cadastrar no nosso site,
+          o cadastro passará por uma análise e, se aprovado, estará listado no
+          nosso aplicativo. <br /> Se você busca uma consulta psicológica, você
+          encontrará no nosso app a lista de profissionais e lá você pode
+          solicitar uma consulta. Depois é só aguardar que o profissional
+          entrará em contato com você! <br /> Após a consulta você tem a opção
+          de mandar um feedback pra gente, queremos sempre melhorar!
+        </Description>
       </ContentWrapper>
     </SectionText>
     {/* <SectionComments>
@@ -84,7 +83,6 @@ const Home = () => (
         <CardComments></CardComments>
       </PositionCard>
     </SectionComments> */}
-    <Footer></Footer>
   </Background>
 );
 

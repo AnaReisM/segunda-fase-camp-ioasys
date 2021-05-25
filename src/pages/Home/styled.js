@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import background from './rectangle.png';
 
 const mobileSize = '720px';
 
@@ -23,6 +24,21 @@ export const Header = styled.header`
 
   @media (max-width: ${mobileSize}) {
     height: 60px;
+  }
+`;
+
+export const StyledVector = styled.img`
+  height: 14px;
+  margin: 0 8px;
+`;
+
+export const PillMargin = styled.div`
+  button:first-child {
+    margin-right: 30px;
+  }
+
+  button {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 `;
 
@@ -64,7 +80,7 @@ export const HeroText = styled.p`
 export const Text = styled.p`
   font-size: 36px;
   margin-bottom: 20px;
-  color: #fefefe;
+  color: #2e2e2e;
 
   ${(props) => {
     if (props.centered === true) {
@@ -91,7 +107,9 @@ export const PhoneContainer = styled.div`
   }
 `;
 
-export const PhoneImg = styled.img``;
+export const PhoneImg = styled.img`
+  margin-bottom: 40px;
+`;
 
 export const Button = styled.img`
   width: 200px;
@@ -108,8 +126,9 @@ export const Button = styled.img`
 export const SectionText = styled.section`
   width: 100%;
   height: 602px;
-  background-color: #9eb3ff;
   padding: 10%;
+  background-image: url('${background}');
+  background-size: cover;
 
   @media (max-width: 720px) {
     height: auto;
@@ -117,7 +136,6 @@ export const SectionText = styled.section`
 `;
 
 export const ContentWrapper = styled.div`
-  //width: 40%;
   width: 100%;
   height: 820px;
 
@@ -161,10 +179,4 @@ export const PositionCard = styled.div`
   @media (max-width: ${mobileSize}) {
     width: 100%;
   }
-`;
-
-export const Footer = styled.footer`
-  width: 100%;
-  height: 250px;
-  background-color: #e5e5e5;
 `;
