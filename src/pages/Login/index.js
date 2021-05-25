@@ -21,15 +21,16 @@ const Login = () => {
     e.preventDefault();
 
     setError(false);
+
     axios
-      .post('https://apicamp.herokuapp.com/api/v1/auth/signin', {
+      .post('https://apicamp.herokuapp.com/api/v1/auth/signinpro', {
         email,
         password,
       })
       .then((response) => {
-        console.log(response);
-        // localStorage.setItem('token', response.headers.authorization);
-        // history.push('/books');
+        console.log(response.data.token);
+        localStorage.setItem('token', response.data.token);
+        // history.push('/dashboard');
       })
       .catch((error) => {
         console.log(error);
