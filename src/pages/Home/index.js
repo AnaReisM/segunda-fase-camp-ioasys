@@ -21,12 +21,13 @@ import Header from '../../components/Header';
 import google from './googleplay.png';
 import apple from './appstore.png';
 import phone from './mockup phone.png';
+import Pill from '../../components/Pill';
 
 const Home = () => (
   <Background>
     <Header>
-      <StyledLink to="/login">Entrar</StyledLink>
-      <StyledLink to="/register">Cadastrar</StyledLink>
+      <Pill color="#6C8DFF">Entrar</Pill>
+      <Pill color="#A864FF">Cadastrar</Pill>
     </Header>
     <Hero>
       <Content>
