@@ -38,3 +38,17 @@ export const PillContainer = styled.div`
 export const HeaderButtonText = styled.p`
   color: #fefefe;
 `;
+
+export const Message = styled.div`
+  background: #b7f0c4;
+  border: 1px solid #62df7e;
+  border-radius: 8px;
+  padding: 24px;
+  margin-left: 24px;
+  margin-right: 73px;
+  margin-top: 40px;
+`;
+
+export const Title = styled.h3`
+  margin-bottom: 10px;
+`;

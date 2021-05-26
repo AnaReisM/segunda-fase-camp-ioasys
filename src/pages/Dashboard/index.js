@@ -8,6 +8,8 @@ import {
   Container,
   PillContainer,
   HeaderButtonText,
+  Message,
+  Title,
 } from './styled';
 import notification from './notification.png';
 import people from './people.png';
@@ -45,6 +47,14 @@ const Dashboard = () => {
           <Pill color="#E4B716">Rejeitadas</Pill>
           <Pill color="#E46016">Canceladas</Pill>
         </PillContainer>
+        <Message>
+          <Title>Você tem solicitações pendentes</Title>
+          <p>
+            Por favor, confirme ou rejeite as solicitações pendentes o mais
+            rápido possível. Não se esqueça de entrar em contato com os
+            pacientes que já confirmaram a consulta!
+          </p>
+        </Message>
         <Card
           name="Ana"
           lastName="Reis"
