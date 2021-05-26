@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Register2 from './pages/Register2';
+import Dashboard from './pages/Dashboard';
 
 const App = () => (
   <Router>
@@ -18,6 +19,9 @@ const App = () => (
       </Route>
       <Route path="/register2">
         <Register2 />
+      </Route>
+      <Route path="/dashboard">
+        <Dashboard />
       </Route>
     </Switch>
   </Router>
