@@ -11,6 +11,7 @@ import {
 } from './styled';
 import notification from './notification.png';
 import people from './people.png';
+import Card from '../../components/Card';
 
 const Dashboard = () => {
   const history = useHistory();
@@ -44,6 +45,13 @@ const Dashboard = () => {
           <Pill color="#E4B716">Rejeitadas</Pill>
           <Pill color="#E46016">Canceladas</Pill>
         </PillContainer>
+        <Card
+          name="Ana"
+          lastName="Reis"
+          phone="(31)99201-6532"
+          email="analuizareism@hotmail.com"
+          type="pendente"
+        ></Card>
       </Container>
     </Background>
   );
