@@ -5,7 +5,7 @@ const mobileSize = '720px';
 export const StyledHeader = styled.header`
   width: 100%;
   height: 100px;
-  background-color: #fefefe;
+  background-color: ${(props) => (props.secondary ? '#A864FF' : '#fefefe')};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -20,5 +20,5 @@ export const StyledHeader = styled.header`
 `;
 
 export const Logo = styled.img`
-  width: 200px;
+  width: 300px;
 `;
