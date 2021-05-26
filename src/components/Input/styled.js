@@ -28,3 +28,14 @@ export const InputField = styled.input`
     margin: 0;
   }
 `;
+
+export const TextArea = styled.textarea`
+  width: 100%;
+  background: #e1e1e1;
+  border-radius: 16px;
+  margin-bottom: 60px;
+  color: #2e2e2e;
+  border: none;
+  padding: 20px;
+  font-size: 18px;
+`;

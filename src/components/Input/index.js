@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Label, InputField } from './styled';
+import { Container, Label, InputField, TextArea } from './styled';
 
 function Input({
   label,
@@ -9,12 +9,13 @@ function Input({
   placeholder,
   required,
   textarea,
+  minLength,
 }) {
   return (
     <Container>
       <Label htmlFor={label}>{label}</Label>
       {textarea ? (
-        <textarea
+        <TextArea
           rows="5"
           placeholder={placeholder}
           value={value}
@@ -29,6 +30,7 @@ function Input({
           onChange={onChange}
           placeholder={placeholder}
           required={required}
+          minLength={minLength}
         />
       )}
     </Container>

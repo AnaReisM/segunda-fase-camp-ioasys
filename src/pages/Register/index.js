@@ -1,4 +1,4 @@
-import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import Header from '../../components/Header';
 import Input from '../../components/Input';
@@ -14,16 +14,17 @@ import icon from '../../components/FormComponents/Vector.png';
 
 const Register = () => {
   const [name, setName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [crp, setCrp] = useState('');
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
-  const [error, setError] = useState(false);
   const [errorPassword, setErrorPassword] = useState(false);
+
+  const history = useHistory();
 
   const submit = (e) => {
     e.preventDefault();
-    setError(false);
     setErrorPassword(false);
 
     if (password !== password2) {
@@ -31,21 +32,13 @@ const Register = () => {
       return;
     }
 
-    axios
-      .post('https://apicamp.herokuapp.com/api/v1/auth/signup', {
-        email,
-        name,
-        password,
-      })
-      .then((response) => {
-        console.log(response);
-        // localStorage.setItem('token', response.headers.authorization);
-        // history.push('/books');
-      })
-      .catch((error) => {
-        console.log(error);
-        setError(true);
-      });
+    history.push('/register2', {
+      name,
+      lastName,
+      email,
+      crp,
+      password,
+    });
   };
 
   return (
@@ -55,10 +48,17 @@ const Register = () => {
         <Title>Crie sua conta</Title>
         <Form onSubmit={submit}>
           <Input
-            label="Nome e Sobrenome"
-            placeholder="Digite aqui seu nome e sobrenome"
+            label="Nome"
+            placeholder="Digite aqui seu nome"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            required
+          ></Input>
+          <Input
+            label="Sobrenome"
+            placeholder="Digite aqui seu sobrenome"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
             required
           ></Input>
           <Input
@@ -84,6 +84,7 @@ const Register = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
             type="password"
+            minLength="8"
           ></Input>
           <Input
             label="Confirme sua Senha"
@@ -92,11 +93,12 @@ const Register = () => {
             onChange={(e) => setPassword2(e.target.value)}
             required
             type="password"
+            errorPassword
+            minLength="8"
           ></Input>
           {errorPassword ? (
             <Error>Confirmação de senha incorreta.</Error>
           ) : null}
-          {error ? <Error>Email e/ou senha incorretos.</Error> : null}
           <Button type="submit">
             Próximo <img src={icon} alt="" />
           </Button>

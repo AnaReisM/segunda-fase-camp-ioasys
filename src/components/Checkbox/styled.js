@@ -9,3 +9,7 @@ export const StyledCheckbox = styled.input`
   border-radius: 2px;
   filter: drop-shadow(2px 1px 2px #2e2e2e);
 `;
+export const Label = styled.label`
+  display: flex;
+  align-items: center;
+`;
