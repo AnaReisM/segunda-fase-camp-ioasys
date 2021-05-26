@@ -1,5 +1,4 @@
 import {
-  StyledLink,
   Hero,
   Title,
   HeroText,
@@ -9,14 +8,12 @@ import {
   SectionText,
   ContentWrapper,
   Description,
-  SectionComments,
-  CardComments,
-  PositionCard,
   Background,
   PhoneContainer,
   PhoneImg,
   StyledVector,
   PillMargin,
+  StyledLink,
 } from './styled';
 import Header from '../../components/Header';
 import google from './googleplay.png';
@@ -29,10 +26,14 @@ const Home = () => (
   <Background>
     <Header>
       <PillMargin>
-        <Pill color="#6C8DFF">Cadastre-se</Pill>
-        <Pill color="#A864FF" active>
-          Login <StyledVector src={Vector} alt="" />
-        </Pill>
+        <StyledLink to="/register">
+          <Pill color="#6C8DFF">Cadastre-se</Pill>
+        </StyledLink>
+        <StyledLink to="/login">
+          <Pill color="#A864FF" active>
+            Login <StyledVector src={Vector} alt="" />
+          </Pill>
+        </StyledLink>
       </PillMargin>
     </Header>
     <Hero>
@@ -74,15 +75,6 @@ const Home = () => (
         </Description>
       </ContentWrapper>
     </SectionText>
-    {/* <SectionComments>
-      <Text centered>O que estão dizendo por aí</Text>
-      <PositionCard>
-        <CardComments></CardComments>
-        <CardComments></CardComments>
-        <CardComments></CardComments>
-        <CardComments></CardComments>
-      </PositionCard>
-    </SectionComments> */}
   </Background>
 );
 

@@ -33,19 +33,24 @@ export const StyledVector = styled.img`
 `;
 
 export const PillMargin = styled.div`
-  button:first-child {
-    margin-right: 30px;
-  }
-
   button {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+
+  @media (max-width: ${mobileSize}) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 `;
 
 export const StyledLink = styled(Link)`
-  margin-left: 24px;
-  color: #000000;
   text-decoration: none;
+  margin-left: 30px;
+  @media (max-width: ${mobileSize}) {
+    margin-top: 10px;
+    margin-left: 0px;
+  }
 `;
 
 export const Hero = styled.section`
@@ -109,6 +114,7 @@ export const PhoneContainer = styled.div`
 
 export const PhoneImg = styled.img`
   margin-bottom: 40px;
+  max-width: 100%;
 `;
 
 export const Button = styled.img`
@@ -146,37 +152,4 @@ export const ContentWrapper = styled.div`
 
 export const Description = styled.p`
   margin-bottom: 20px;
-`;
-
-export const SectionComments = styled.section`
-  width: 100%;
-  height: 1000px;
-  background-color: #e5e5e5;
-  padding: 120px 10%;
-
-  @media (max-width: ${mobileSize}) {
-    height: auto;
-    width: 100%;
-  }
-`;
-
-export const CardComments = styled.div`
-  width: 360px;
-  height: 240px;
-  background-color: #c4c4c4;
-  border-radius: 12px;
-  margin-bottom: 20px;
-`;
-
-export const PositionCard = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 740px;
-  margin: 120px auto;
-
-  @media (max-width: ${mobileSize}) {
-    width: 100%;
-  }
 `;

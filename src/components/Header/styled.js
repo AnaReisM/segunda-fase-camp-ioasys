@@ -13,7 +13,9 @@ export const StyledHeader = styled.header`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   @media (max-width: ${mobileSize}) {
-    height: 60px;
+    height: auto;
+    flex-direction: column;
+    padding: 10px 10%;
   }
 `;
 
