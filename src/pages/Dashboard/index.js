@@ -14,6 +14,7 @@ import {
 import notification from './notification.png';
 import people from './people.png';
 import Card from '../../components/Card';
+import Footer from '../../components/Footer';
 
 const Dashboard = () => {
   const history = useHistory();
@@ -63,6 +64,7 @@ const Dashboard = () => {
           type="pendente"
         ></Card>
       </Container>
+      <Footer></Footer>
     </Background>
   );
 };

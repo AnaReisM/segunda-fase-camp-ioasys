@@ -11,6 +11,7 @@ import {
   Error,
 } from '../../components/FormComponents/styled';
 import icon from '../../components/FormComponents/Vector.png';
+import Footer from '../../components/Footer';
 
 const Register = () => {
   const [name, setName] = useState('');
@@ -104,6 +105,7 @@ const Register = () => {
           </Button>
         </Form>
       </Container>
+      <Footer></Footer>
     </Background>
   );
 };

@@ -11,6 +11,7 @@ import {
   Error,
 } from '../../components/FormComponents/styled';
 import icon from '../../components/FormComponents/Vector.png';
+import Footer from '../../components/Footer';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -39,34 +40,37 @@ const Login = () => {
   };
 
   return (
-    <Background>
-      <Header></Header>
-      <Container>
-        <Title>Faça seu Login</Title>
-        <Form onSubmit={submit}>
-          <Input
-            type="email"
-            label="E-mail"
-            placeholder="Digite aqui seu e-mail"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          ></Input>
-          <Input
-            label="Senha"
-            placeholder="Digite aqui sua senha"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            required
-          ></Input>
-          {error ? <Error>Email e/ou senha incorretos.</Error> : null}
-          <Button type="submit">
-            Entrar <img src={icon} alt="" />
-          </Button>
-        </Form>
-      </Container>
-    </Background>
+    <>
+      <Background>
+        <Header></Header>
+        <Container>
+          <Title>Faça seu Login</Title>
+          <Form onSubmit={submit}>
+            <Input
+              type="email"
+              label="E-mail"
+              placeholder="Digite aqui seu e-mail"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            ></Input>
+            <Input
+              label="Senha"
+              placeholder="Digite aqui sua senha"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              required
+            ></Input>
+            {error ? <Error>Email e/ou senha incorretos.</Error> : null}
+            <Button type="submit">
+              Entrar <img src={icon} alt="" />
+            </Button>
+          </Form>
+        </Container>
+      </Background>
+      <Footer></Footer>
+    </>
   );
 };
 

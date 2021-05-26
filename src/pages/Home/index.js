@@ -21,6 +21,7 @@ import apple from './appstore.png';
 import phone from './mockup phone.png';
 import Pill from '../../components/Pill';
 import Vector from '../../components/FormComponents/Vector.png';
+import Footer from '../../components/Footer';
 
 const Home = () => (
   <Background>
@@ -75,6 +76,7 @@ const Home = () => (
         </Description>
       </ContentWrapper>
     </SectionText>
+    <Footer></Footer>
   </Background>
 );
 

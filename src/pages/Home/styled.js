@@ -143,7 +143,6 @@ export const SectionText = styled.section`
 
 export const ContentWrapper = styled.div`
   width: 100%;
-  height: 820px;
 
   @media (max-width: ${mobileSize}) {
     width: 100%;

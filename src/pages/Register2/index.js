@@ -14,6 +14,7 @@ import {
 import { Label } from '../../components/Input/styled';
 import Checkbox from '../../components/Checkbox';
 import { CheckContainer, CheckDown, CheckUp } from './styled';
+import Footer from '../../components/Footer';
 
 const Login = () => {
   const [experience, setExperience] = useState('');
@@ -105,6 +106,7 @@ const Login = () => {
           <Button type="submit">Criar</Button>
         </Form>
       </Container>
+      <Footer></Footer>
     </Background>
   );
 };
