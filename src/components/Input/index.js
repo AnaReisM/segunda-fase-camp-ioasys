@@ -10,6 +10,7 @@ function Input({
   required,
   textarea,
   minLength,
+  disabled,
 }) {
   return (
     <Container>
@@ -21,6 +22,7 @@ function Input({
           value={value}
           onChange={onChange}
           required={required}
+          disabled={disabled}
         />
       ) : (
         <InputField
@@ -31,6 +33,7 @@ function Input({
           placeholder={placeholder}
           required={required}
           minLength={minLength}
+          disabled={disabled}
         />
       )}
     </Container>

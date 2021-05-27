@@ -8,7 +8,7 @@ export const HeaderButtonContainer = styled.div`
   align-items: center;
 `;
 
-export const HeaderButton = styled.div`
+export const HeaderButton = styled(Link)`
   width: 160px;
   height: 100px;
   background: ${(props) => (props.active ? '#8d33ff' : 'transparent')};
@@ -17,6 +17,7 @@ export const HeaderButton = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  text-decoration: none;
 `;
 
 export const Container = styled.div`

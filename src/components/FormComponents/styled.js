@@ -20,6 +20,7 @@ export const Header = styled.header`
 export const Title = styled.h1`
   font-size: 28px;
   font-weight: 400;
+  margin-bottom: 20px;
 `;
 
 export const Background = styled.div`
@@ -34,8 +35,12 @@ export const Container = styled.div`
   padding: 50px 5%;
 
   @media (min-width: 720px) {
-    width: 600px;
-    margin-left: 100px;
+    ${(props) =>
+      props.big
+        ? `width: 80%;
+    margin: 0 auto;`
+        : `width: 600px;
+    margin-left: 100px;`}
   } ;
 `;
 
@@ -44,7 +49,6 @@ export const Form = styled.form`
   box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.25);
   border-radius: 40px;
   padding: 40px 30px;
-  margin-top: 20px;
 `;
 
 export const Button = styled.button`

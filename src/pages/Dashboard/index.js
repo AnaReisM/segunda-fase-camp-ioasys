@@ -21,6 +21,7 @@ const Dashboard = () => {
 
   const logout = () => {
     localStorage.removeItem('token');
+    localStorage.removeItem('id');
     history.push('/login');
   };
 
@@ -28,11 +29,11 @@ const Dashboard = () => {
     <Background>
       <Header secondary>
         <HeaderButtonContainer>
-          <HeaderButton active>
+          <HeaderButton active to="/dashboard">
             <img src={notification} alt="" />
             <HeaderButtonText>Notificações</HeaderButtonText>
           </HeaderButton>
-          <HeaderButton>
+          <HeaderButton to="/perfil">
             <img src={people} alt="" />
             <HeaderButtonText>Perfil</HeaderButtonText>
           </HeaderButton>

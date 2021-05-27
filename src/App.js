@@ -4,6 +4,9 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Register2 from './pages/Register2';
 import Dashboard from './pages/Dashboard';
+import Perfil from './pages/Perfil';
+import 'react-toastify/dist/ReactToastify.css';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 const App = () => (
   <Router>
@@ -22,6 +25,9 @@ const App = () => (
       </Route>
       <Route path="/dashboard">
         <Dashboard />
+      </Route>
+      <Route path="/perfil">
+        <Perfil />
       </Route>
     </Switch>
   </Router>
