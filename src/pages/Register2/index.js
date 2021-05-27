@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import Header from '../../components/Header';
 import Input from '../../components/Input';
@@ -24,6 +24,7 @@ const Login = () => {
   const [cityRemote, setCityRemote] = useState(false);
   const [error, setError] = useState(false);
 
+  const history = useHistory();
   const location = useLocation();
   console.log(location);
 
@@ -46,7 +47,8 @@ const Login = () => {
       })
       .then((response) => {
         localStorage.setItem('token', response.data.token);
-        // history.push('/books');
+        localStorage.setItem('id', response.data.storedProfessional.id);
+        history.push('/dashboard');
       })
       .catch((error) => {
         console.log(error);

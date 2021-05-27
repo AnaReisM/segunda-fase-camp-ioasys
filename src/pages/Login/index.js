@@ -1,3 +1,4 @@
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { useState } from 'react';
 import Header from '../../components/Header';
@@ -18,6 +19,8 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
 
+  const history = useHistory();
+
   const submit = (e) => {
     e.preventDefault();
 
@@ -31,7 +34,8 @@ const Login = () => {
       .then((response) => {
         console.log(response.data.token);
         localStorage.setItem('token', response.data.token);
-        // history.push('/dashboard');
+        localStorage.setItem('id', response.data.professional.id);
+        history.push('/dashboard');
       })
       .catch((error) => {
         console.log(error);
