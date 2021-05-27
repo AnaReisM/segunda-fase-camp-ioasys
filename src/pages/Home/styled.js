@@ -84,7 +84,7 @@ export const HeroText = styled.p`
 
 export const Text = styled.p`
   font-size: 36px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   color: #2e2e2e;
 
   ${(props) => {
@@ -132,9 +132,11 @@ export const Button = styled.img`
 export const SectionText = styled.section`
   width: 100%;
   height: 602px;
-  padding: 10%;
   background-image: url('${background}');
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media (max-width: 720px) {
     height: auto;
@@ -143,6 +145,10 @@ export const SectionText = styled.section`
 
 export const ContentWrapper = styled.div`
   width: 100%;
+  background: #fefefe;
+  box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 0px 170px;
+  padding: 48px 28%;
 
   @media (max-width: ${mobileSize}) {
     width: 100%;
@@ -150,5 +156,38 @@ export const ContentWrapper = styled.div`
 `;
 
 export const Description = styled.p`
-  margin-bottom: 20px;
+  width: 100%;
+  font-size: 20px;
+
+  p {
+    margin-bottom: 25px;
+  }
+`;
+
+export const Faq = styled.section`
+  width: 100%;
+  padding: 60px 30%;
+`;
+
+export const TitleFaq = styled.h2`
+  font-size: 36px;
+  color: #2e2e2e;
+  margin: 20px;
+  padding: 10px;
+`;
+
+export const Quest = styled.p`
+  border: 1.5px solid #a864ff;
+  margin: 22px;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #2e2e2e;
+`;
+
+export const Answers = styled.p`
+  font-size: 20px;
+  margin: 0 40px;
+  color: #2e2e2e;
 `;

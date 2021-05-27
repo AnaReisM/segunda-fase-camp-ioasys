@@ -14,6 +14,10 @@ import {
   StyledVector,
   PillMargin,
   StyledLink,
+  Faq,
+  Quest,
+  TitleFaq,
+  Answers,
 } from './styled';
 import Header from '../../components/Header';
 import google from './googleplay.png';
@@ -41,9 +45,9 @@ const Home = () => (
       <Content>
         <Title>Encontre profissionais que você pode confiar</Title>
         <HeroText>
-          A consul.t foi desenvolvida pensando em todas as pessoas que sentem
-          algum tipo de receio quando precisam agendar uma consulta, aqui você
-          pode ter certeza que terá sua identidade respeitada{' '}
+          No aplicativo da consul.t estão listados os melhores profissionais
+          para atender pessoas trans, pessoas que compactuam com os ideais de
+          respeito, diversidade e dignidade para todos.{' '}
         </HeroText>
       </Content>
       <PhoneContainer>
@@ -64,18 +68,49 @@ const Home = () => (
     </Hero>
     <SectionText>
       <ContentWrapper>
-        <Text>Como a consul.t funciona?</Text>
+        <Text>
+          <strong>Como a consul.t funciona?</strong>
+        </Text>
         <Description>
-          Profissionais da área de psicologia podem se cadastrar no nosso site,
-          o cadastro passará por uma análise e, se aprovado, estará listado no
-          nosso aplicativo. <br /> Se você busca uma consulta psicológica, você
-          encontrará no nosso app a lista de profissionais e lá você pode
-          solicitar uma consulta. Depois é só aguardar que o profissional
-          entrará em contato com você! <br /> Após a consulta você tem a opção
-          de mandar um feedback pra gente, queremos sempre melhorar!
+          <Answers>
+            Profissionais da área de psicologia podem se cadastrar no nosso
+            site, o cadastro passará por uma análise e, se aprovado, estará
+            listado no nosso aplicativo.
+          </Answers>{' '}
+          <Answers>
+            Se você busca uma consulta psicológica, você encontrará no nosso app
+            a lista de profissionais e lá você pode solicitar uma consulta.
+            Depois é só aguardar que o profissional entrará em contato com você!
+          </Answers>{' '}
+          <Answers>
+            Após a consulta você tem a opção de mandar um feedback pra gente,
+            queremos sempre melhorar!
+          </Answers>
         </Description>
       </ContentWrapper>
     </SectionText>
+    <Faq>
+      <TitleFaq>Perguntas Frequentes</TitleFaq>
+      <Quest>Não tenho condições para me consultar, o que eu faço?</Quest>
+      <Answers>
+        Estamos estudando a melhor forma de oferecer consultas a preço social,
+        depois de se cadastrar no aplicativo, mande um e-mail para
+        <b> contato@consult.com</b> com seu nome, telefone e assunto “consulta
+        social”.
+      </Answers>
+      <Quest>O profissional não entrou em contato comigo, como proceder?</Quest>
+      <Answers>
+        O profissional, após solicitado, tem o período de 1 dia útil para mudar
+        o status da consulta, se não houver a mudança, a solicitação será
+        cancelada.
+      </Answers>
+      <Quest>Quais profissionais encontro no app da consul.t?</Quest>
+      <Answers>
+        Por enquanto, estamos apenas aceitando cadastro de profissionais da área
+        de psicologia. Em breve, expandiremos para todos os profissionais da
+        área da saúde.
+      </Answers>
+    </Faq>
     <Footer></Footer>
   </Background>
 );
