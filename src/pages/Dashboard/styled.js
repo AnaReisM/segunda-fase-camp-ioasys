@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const mobileSize = '720px';
+//const mobileSize = '720px';
 
 export const HeaderButtonContainer = styled.div`
   display: flex;

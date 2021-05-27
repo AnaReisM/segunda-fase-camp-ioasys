@@ -155,7 +155,7 @@ export const ContentWrapper = styled.div`
   }
 `;
 
-export const Description = styled.p`
+export const Description = styled.div`
   width: 100%;
   font-size: 20px;
 

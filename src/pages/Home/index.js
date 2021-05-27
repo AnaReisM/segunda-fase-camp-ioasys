@@ -72,20 +72,20 @@ const Home = () => (
           <strong>Como a consul.t funciona?</strong>
         </Text>
         <Description>
-          <Answers>
+          <p>
             Profissionais da área de psicologia podem se cadastrar no nosso
             site, o cadastro passará por uma análise e, se aprovado, estará
             listado no nosso aplicativo.
-          </Answers>{' '}
-          <Answers>
+          </p>{' '}
+          <p>
             Se você busca uma consulta psicológica, você encontrará no nosso app
             a lista de profissionais e lá você pode solicitar uma consulta.
             Depois é só aguardar que o profissional entrará em contato com você!
-          </Answers>{' '}
-          <Answers>
+          </p>{' '}
+          <p>
             Após a consulta você tem a opção de mandar um feedback pra gente,
             queremos sempre melhorar!
-          </Answers>
+          </p>
         </Description>
       </ContentWrapper>
     </SectionText>

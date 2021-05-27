@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useHistory } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Header from '../../components/Header';

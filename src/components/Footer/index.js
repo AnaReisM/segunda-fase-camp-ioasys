@@ -14,13 +14,13 @@ const Footer = () => (
     <div>
       <Links>
         <li>
-          <a href="#">Conteúdos Informativos</a>
+          <a href="/">Conteúdos Informativos</a>
         </li>
         <li>
-          <a href="#">Política de Privacidade</a>
+          <a href="/">Política de Privacidade</a>
         </li>
         <li>
-          <a href="#">Termos de Uso</a>
+          <a href="/">Termos de Uso</a>
         </li>
       </Links>
     </div>
