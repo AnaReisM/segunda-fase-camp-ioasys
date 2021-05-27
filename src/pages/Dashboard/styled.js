@@ -53,3 +53,9 @@ export const Message = styled.div`
 export const Title = styled.h3`
   margin-bottom: 10px;
 `;
+
+export const CardContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;

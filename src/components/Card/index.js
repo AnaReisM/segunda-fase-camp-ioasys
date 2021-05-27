@@ -7,7 +7,7 @@ import {
   ButtonContainer,
 } from './styled';
 
-const Card = ({ name, lastName, phone, email, type }) => (
+const Card = ({ name, lastName, phone, email, type, date }) => (
   <BackgroundCard>
     <Name>
       {name} {lastName}
@@ -17,6 +17,9 @@ const Card = ({ name, lastName, phone, email, type }) => (
     </Content>
     <Content>
       E-mail: <Strong>{email}</Strong>
+    </Content>
+    <Content>
+      Data: <Strong>{date}</Strong>
     </Content>
     {type === 'pendente' && (
       <ButtonContainer>

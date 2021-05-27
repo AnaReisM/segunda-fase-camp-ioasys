@@ -10,14 +10,41 @@ import {
   HeaderButtonText,
   Message,
   Title,
+  CardContainer,
 } from './styled';
 import notification from './notification.png';
 import people from './people.png';
 import Card from '../../components/Card';
 import Footer from '../../components/Footer';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import format from 'date-fns/format';
 
 const Dashboard = () => {
+  const [items, setItems] = useState([]);
   const history = useHistory();
+
+  useEffect(() => {
+    const id = localStorage.getItem('id');
+    const token = localStorage.getItem('token');
+
+    axios
+      .get(
+        `https://apicamp.herokuapp.com/api/v1/professionals/${id}/consultations`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      )
+      .then((response) => {
+        console.log(response);
+        setItems(response.data.data);
+      })
+      .catch(() => {
+        logout();
+      });
+  }, []);
 
   const logout = () => {
     localStorage.removeItem('token');
@@ -57,13 +84,18 @@ const Dashboard = () => {
             pacientes que já confirmaram a consulta!
           </p>
         </Message>
-        <Card
-          name="Ana"
-          lastName="Reis"
-          phone="(31)99201-6532"
-          email="analuizareism@hotmail.com"
-          type="pendente"
-        ></Card>
+        <CardContainer>
+          {items.map((item) => (
+            <Card
+              name={item.user.firstName}
+              lastName={item.user.lastName}
+              phone={item.user.telephone}
+              email="analuizareism@hotmail.com"
+              date={format(new Date(item.createdAt), 'dd/MM/yyyy')}
+              type="pendente"
+            ></Card>
+          ))}
+        </CardContainer>
       </Container>
       <Footer></Footer>
     </Background>
