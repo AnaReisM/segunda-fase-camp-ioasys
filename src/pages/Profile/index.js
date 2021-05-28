@@ -17,6 +17,7 @@ import {
   HeaderButton,
   HeaderButtonText,
   HeaderButtonContainer,
+  Warning,
 } from './styled';
 import { CheckContainer, CheckUp, CheckDown } from '../Register2/styled';
 import Checkbox from '../../components/Checkbox';
@@ -133,7 +134,7 @@ const Profile = () => {
               <img src={notification} alt="" />
               <HeaderButtonText>Notificações</HeaderButtonText>
             </HeaderButton>
-            <HeaderButton active to="/profile">
+            <HeaderButton active="true" to="/profile">
               <img src={people} alt="" />
               <HeaderButtonText>Perfil</HeaderButtonText>
             </HeaderButton>
@@ -171,11 +172,13 @@ const Profile = () => {
               required
             ></Input>
             <Input
-              disabled={blocked}
+              disabled
               label="CRP"
+              afterLabel={
+                <Warning>*o CRP é uma informação não editável</Warning>
+              }
               placeholder="Digite aqui seu CRP"
               value={crp}
-              onChange={(e) => setCrp(e.target.value)}
               required
               type="number"
             ></Input>

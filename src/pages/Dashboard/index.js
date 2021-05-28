@@ -20,10 +20,15 @@ import Footer from '../../components/Footer';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import format from 'date-fns/format';
+import Empty from '../../components/Empty';
 
 const Dashboard = () => {
+  const [status, setStatus] = useState('pending');
   const [items, setItems] = useState([]);
   const history = useHistory();
+
+  const filteredItems = items.filter((item) => item.status === status);
+  const pendingItems = items.filter((item) => item.status === 'pending').length;
 
   useEffect(() => {
     const id = localStorage.getItem('id');
@@ -57,7 +62,7 @@ const Dashboard = () => {
     <Background>
       <Header secondary>
         <HeaderButtonContainer>
-          <HeaderButton active to="/dashboard">
+          <HeaderButton active="true" to="/dashboard">
             <img src={notification} alt="" />
             <HeaderButtonText>Notificações</HeaderButtonText>
           </HeaderButton>
@@ -72,31 +77,69 @@ const Dashboard = () => {
       </Header>
       <Container>
         <PillContainer>
-          <Pill color="#6C8DFF">Pendentes</Pill>
-          <Pill color="#8DE8A1">Confirmadas</Pill>
-          <Pill color="#E4B716">Rejeitadas</Pill>
-          <Pill color="#E46016">Canceladas</Pill>
+          <Pill
+            color="#A864FF"
+            onClick={() => setStatus('pending')}
+            active={status === 'pending'}
+            count={pendingItems}
+          >
+            Pendentes
+          </Pill>
+          <Pill
+            color="#8DE8A1"
+            onClick={() => setStatus('confirmed')}
+            active={status === 'confirmed'}
+          >
+            Confirmadas
+          </Pill>
+          <Pill
+            color="#E4B716"
+            onClick={() => setStatus('recused')}
+            active={status === 'recused'}
+          >
+            Rejeitadas
+          </Pill>
+          <Pill
+            color="#E46016"
+            onClick={() => setStatus('canceled')}
+            active={status === 'canceled'}
+          >
+            Canceladas
+          </Pill>
+          <Pill
+            color="#3864FF"
+            onClick={() => setStatus('concluded')}
+            active={status === 'concluded'}
+          >
+            Concluídas
+          </Pill>
         </PillContainer>
-        <Message>
-          <Title>Você tem solicitações pendentes</Title>
-          <p>
-            Por favor, confirme ou rejeite as solicitações pendentes o mais
-            rápido possível. Não se esqueça de entrar em contato com os
-            pacientes que já confirmaram a consulta!
-          </p>
-        </Message>
+        {items.some((item) => item.status === 'pending') && (
+          <Message>
+            <Title>Você tem solicitações pendentes</Title>
+            <p>
+              Por favor, confirme ou rejeite as solicitações pendentes o mais
+              rápido possível. Não se esqueça de entrar em contato com os
+              pacientes que já confirmaram a consulta!
+            </p>
+          </Message>
+        )}
         <CardContainer>
-          {items.map((item) => (
-            <Card
-              key={item.id}
-              name={item.user.firstName}
-              lastName={item.user.lastName}
-              phone={item.user.telephone}
-              email={item.user.email}
-              date={format(new Date(item.createdAt), 'dd/MM/yyyy')}
-              type="pendente"
-            ></Card>
-          ))}
+          {filteredItems.length === 0 ? (
+            <Empty></Empty>
+          ) : (
+            filteredItems.map((item) => (
+              <Card
+                key={item.id}
+                name={item.user.firstName}
+                lastName={item.user.lastName}
+                phone={item.user.telephone}
+                email={item.user.email}
+                date={format(new Date(item.createdAt), 'dd/MM/yyyy')}
+                type={item.status}
+              ></Card>
+            ))
+          )}
         </CardContainer>
       </Container>
       <Footer></Footer>

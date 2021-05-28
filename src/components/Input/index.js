@@ -1,8 +1,8 @@
-import React from 'react';
 import { Container, Label, InputField, TextArea } from './styled';
 
 function Input({
   label,
+  afterLabel,
   value,
   onChange,
   type,
@@ -14,7 +14,9 @@ function Input({
 }) {
   return (
     <Container>
-      <Label htmlFor={label}>{label}</Label>
+      <Label htmlFor={label}>
+        {label} {afterLabel}
+      </Label>
       {textarea ? (
         <TextArea
           rows="5"

@@ -15,3 +15,11 @@ export const ButtonMenu = styled.button`
   filter: ${(props) =>
     !props.active ? 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))' : ''};
 `;
+
+export const Count = styled.div`
+  background: ${(props) => (props.active ? '#fefefe' : props.color)};
+  color: ${(props) => (props.active ? '#2e2e2e' : '#fefefe')};
+  padding: 2px 6px 0px;
+  border-radius: 4px;
+  margin-left: 7px;
+`;

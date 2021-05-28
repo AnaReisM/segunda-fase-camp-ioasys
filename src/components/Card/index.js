@@ -21,13 +21,13 @@ const Card = ({ name, lastName, phone, email, type, date }) => (
     <Content>
       Data: <Strong>{date}</Strong>
     </Content>
-    {type === 'pendente' && (
+    {type === 'pending' && (
       <ButtonContainer>
         <Button color="#e4b716">Rejeitar</Button>
         <Button color="#62DF7E">Confirmar</Button>
       </ButtonContainer>
     )}
-    {type === 'confirmada' && (
+    {type === 'confirmed' && (
       <ButtonContainer>
         <Button color="#E46016">Cancelar</Button>
         <Button color="#62DF7E">Realizada</Button>

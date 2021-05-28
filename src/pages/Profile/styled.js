@@ -27,3 +27,9 @@ export const HeaderButton = styled(Link)`
 export const HeaderButtonText = styled.p`
   color: #fefefe;
 `;
+
+export const Warning = styled.p`
+  color: #e46016;
+  display: inline;
+  margin-left: 10px;
+`;

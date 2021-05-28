@@ -5,9 +5,15 @@ import logoWhite from './white.png';
 
 const Header = ({ children, secondary }) => (
   <StyledHeader secondary={secondary}>
-    <Link to="/">
-      <Logo src={secondary ? logoWhite : logo} alt="Logo do consul.t" />
-    </Link>
+    {secondary ? (
+      <Link to="/dashboard">
+        <Logo src={logoWhite} alt="Logo do consul.t" />
+      </Link>
+    ) : (
+      <Link to="/">
+        <Logo src={logo} alt="Logo do consul.t" />
+      </Link>
+    )}
     <div>{children}</div>
   </StyledHeader>
 );
