@@ -11,7 +11,7 @@ export const Strong = styled.strong`
 `;
 
 export const BackgroundCard = styled.div`
-  width: 30%;
+  width: 315px;
   padding: 20px;
   background: #fefefe;
   border: 1px solid #7000ff;

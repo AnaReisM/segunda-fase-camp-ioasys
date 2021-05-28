@@ -34,13 +34,11 @@ const Login = () => {
         password,
       })
       .then((response) => {
-        console.log(response.data.token);
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('id', response.data.professional.id);
         history.push('/dashboard');
       })
       .catch((error) => {
-        console.log(error);
         setError(true);
       });
   };

@@ -30,7 +30,6 @@ const Login = () => {
 
   const history = useHistory();
   const location = useLocation();
-  console.log(location);
 
   const submit = (e) => {
     e.preventDefault();
@@ -55,7 +54,6 @@ const Login = () => {
         history.push('/dashboard');
       })
       .catch((error) => {
-        console.log(error);
         setError(true);
       });
   };

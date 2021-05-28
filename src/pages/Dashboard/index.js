@@ -44,7 +44,6 @@ const Dashboard = () => {
         },
       )
       .then((response) => {
-        console.log(response);
         setItems(response.data.data);
       })
       .catch(() => {

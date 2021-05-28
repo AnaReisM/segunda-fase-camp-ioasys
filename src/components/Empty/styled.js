@@ -4,6 +4,7 @@ export const Container = styled.div`
   width: 100%;
   text-align: center;
   color: #2e2e2e;
+  margin-top: 30px;
 
   h2 {
     margin: 30px 0 40px;
