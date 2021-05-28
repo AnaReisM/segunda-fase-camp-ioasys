@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import axios from 'axios';
 import { useState } from 'react';
 import Header from '../../components/Header';
@@ -13,6 +13,8 @@ import {
 } from '../../components/FormComponents/styled';
 import icon from '../../components/FormComponents/Vector.png';
 import Footer from '../../components/Footer';
+import Pill from '../../components/Pill';
+import { HeaderText } from '../../components/Header/styled';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -46,7 +48,12 @@ const Login = () => {
   return (
     <>
       <Background>
-        <Header></Header>
+        <Header>
+          <HeaderText>Ainda não tem uma conta?</HeaderText>
+          <Link to="/register">
+            <Pill color="#6C8DFF">Cadastre-se</Pill>
+          </Link>
+        </Header>
         <Container>
           <Title>Faça seu Login</Title>
           <Form onSubmit={submit}>

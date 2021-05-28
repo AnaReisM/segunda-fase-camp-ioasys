@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { useState } from 'react';
 import Header from '../../components/Header';
 import Input from '../../components/Input';
@@ -12,6 +12,9 @@ import {
 } from '../../components/FormComponents/styled';
 import icon from '../../components/FormComponents/Vector.png';
 import Footer from '../../components/Footer';
+import { HeaderText } from '../../components/Header/styled';
+import Pill from '../../components/Pill';
+import { StyledVector } from '../Home/styled';
 
 const Register = () => {
   const [name, setName] = useState('');
@@ -32,7 +35,6 @@ const Register = () => {
       setErrorPassword(true);
       return;
     }
-
     history.push('/register2', {
       name,
       lastName,
@@ -44,7 +46,15 @@ const Register = () => {
 
   return (
     <Background>
-      <Header></Header>
+      <Header>
+        <HeaderText>Já tem uma conta?</HeaderText>
+        <Link to="/login">
+          <Pill color="#A864FF" active>
+            Login
+            <StyledVector src={icon} alt="" />
+          </Pill>
+        </Link>
+      </Header>
       <Container>
         <Title>Crie sua conta</Title>
         <Form onSubmit={submit}>

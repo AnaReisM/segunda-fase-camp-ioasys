@@ -21,6 +21,7 @@ export const Title = styled.h1`
   font-size: 28px;
   font-weight: 400;
   margin-bottom: 20px;
+  color: #2e2e2e;
 `;
 
 export const Background = styled.div`

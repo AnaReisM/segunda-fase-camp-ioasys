@@ -4,7 +4,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Register2 from './pages/Register2';
 import Dashboard from './pages/Dashboard';
-import Perfil from './pages/Perfil';
+import Profile from './pages/Profile';
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
@@ -26,8 +26,8 @@ const App = () => (
       <Route path="/dashboard">
         <Dashboard />
       </Route>
-      <Route path="/perfil">
-        <Perfil />
+      <Route path="/profile">
+        <Profile />
       </Route>
     </Switch>
   </Router>

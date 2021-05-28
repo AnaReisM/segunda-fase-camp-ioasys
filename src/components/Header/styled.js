@@ -12,6 +12,10 @@ export const StyledHeader = styled.header`
   padding: 0 10%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
+  a {
+    text-decoration: none;
+  }
+
   @media (max-width: ${mobileSize}) {
     height: auto;
     flex-direction: column;
@@ -21,4 +25,10 @@ export const StyledHeader = styled.header`
 
 export const Logo = styled.img`
   width: 300px;
+`;
+
+export const HeaderText = styled.span`
+  font-weight: bold;
+  margin-right: 30px;
+  color: #2e2e2e;
 `;

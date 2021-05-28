@@ -1,7 +1,8 @@
 import axios from 'axios';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useLocation, useHistory, Link } from 'react-router-dom';
 import { useState } from 'react';
 import Header from '../../components/Header';
+import { HeaderText } from '../../components/Header/styled';
 import Input from '../../components/Input';
 import {
   Title,
@@ -11,10 +12,13 @@ import {
   Background,
   Error,
 } from '../../components/FormComponents/styled';
+import icon from '../../components/FormComponents/Vector.png';
 import { Label } from '../../components/Input/styled';
 import Checkbox from '../../components/Checkbox';
 import { CheckContainer, CheckDown, CheckUp } from './styled';
 import Footer from '../../components/Footer';
+import Pill from '../../components/Pill';
+import { StyledVector } from '../Home/styled';
 
 const Login = () => {
   const [experience, setExperience] = useState('');
@@ -58,7 +62,15 @@ const Login = () => {
 
   return (
     <Background>
-      <Header></Header>
+      <Header>
+        <HeaderText>Já tem uma conta?</HeaderText>
+        <Link to="/login">
+          <Pill color="#A864FF" active>
+            Login
+            <StyledVector src={icon} alt="" />
+          </Pill>
+        </Link>
+      </Header>
       <Container>
         <Title>Um pouco mais sobre você</Title>
         <Form onSubmit={submit}>

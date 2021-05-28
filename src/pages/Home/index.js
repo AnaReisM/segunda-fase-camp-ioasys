@@ -26,11 +26,13 @@ import phone from './mockup phone.png';
 import Pill from '../../components/Pill';
 import Vector from '../../components/FormComponents/Vector.png';
 import Footer from '../../components/Footer';
+import { HeaderText } from '../../components/Header/styled';
 
 const Home = () => (
   <Background>
     <Header>
       <PillMargin>
+        <HeaderText>Para profissionais</HeaderText>
         <StyledLink to="/register">
           <Pill color="#6C8DFF">Cadastre-se</Pill>
         </StyledLink>

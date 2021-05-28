@@ -25,7 +25,7 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import { confirmAlert } from 'react-confirm-alert';
 
-const Perfil = () => {
+const Profile = () => {
   const [name, setName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -133,7 +133,7 @@ const Perfil = () => {
               <img src={notification} alt="" />
               <HeaderButtonText>Notificações</HeaderButtonText>
             </HeaderButton>
-            <HeaderButton active to="/perfil">
+            <HeaderButton active to="/profile">
               <img src={people} alt="" />
               <HeaderButtonText>Perfil</HeaderButtonText>
             </HeaderButton>
@@ -270,4 +270,4 @@ const Perfil = () => {
   );
 };
 
-export default Perfil;
+export default Profile;

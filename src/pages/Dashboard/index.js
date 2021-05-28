@@ -61,7 +61,7 @@ const Dashboard = () => {
             <img src={notification} alt="" />
             <HeaderButtonText>Notificações</HeaderButtonText>
           </HeaderButton>
-          <HeaderButton to="/perfil">
+          <HeaderButton to="/profile">
             <img src={people} alt="" />
             <HeaderButtonText>Perfil</HeaderButtonText>
           </HeaderButton>
@@ -88,10 +88,11 @@ const Dashboard = () => {
         <CardContainer>
           {items.map((item) => (
             <Card
+              key={item.id}
               name={item.user.firstName}
               lastName={item.user.lastName}
               phone={item.user.telephone}
-              email="analuizareism@hotmail.com"
+              email={item.user.email}
               date={format(new Date(item.createdAt), 'dd/MM/yyyy')}
               type="pendente"
             ></Card>
