@@ -12,6 +12,8 @@ import {
   Message,
   Title,
   CardContainer,
+  Button,
+  ButtonContainer,
 } from './styled';
 import notification from './notification.png';
 import people from './people.png';
@@ -29,8 +31,7 @@ const Dashboard = () => {
 
   const filteredItems = items.filter((item) => item.status === status);
   const pendingItems = items.filter((item) => item.status === 'pending').length;
-
-  useEffect(() => {
+  const getItems = () => {
     const id = localStorage.getItem('id');
     const token = localStorage.getItem('token');
 
@@ -49,12 +50,38 @@ const Dashboard = () => {
       .catch(() => {
         logout();
       });
+  };
+
+  useEffect(() => {
+    getItems();
   }, []);
 
   const logout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('id');
     history.push('/login');
+  };
+
+  const onAction = (itemId, action) => {
+    const id = localStorage.getItem('id');
+    const token = localStorage.getItem('token');
+
+    axios
+      .post(
+        `https://apicamp.herokuapp.com/api/v1/professionals/${id}/consultations/${itemId}/${action}`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      )
+      .then(() => {
+        getItems();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
@@ -135,7 +162,42 @@ const Dashboard = () => {
                 phone={item.user.telephone}
                 email={item.user.email}
                 date={format(new Date(item.createdAt), 'dd/MM/yyyy')}
-                type={item.status}
+                buttons={
+                  <>
+                    {item.status === 'pending' && (
+                      <ButtonContainer>
+                        <Button
+                          color="#e4b716"
+                          onClick={() => onAction(item.id, 'recusation')}
+                        >
+                          Rejeitar
+                        </Button>
+                        <Button
+                          color="#62DF7E"
+                          onClick={() => onAction(item.id, 'confirmation')}
+                        >
+                          Confirmar
+                        </Button>
+                      </ButtonContainer>
+                    )}
+                    {item.status === 'confirmed' && (
+                      <ButtonContainer>
+                        <Button
+                          color="#E46016"
+                          onClick={() => onAction(item.id, 'cancel')}
+                        >
+                          Cancelar
+                        </Button>
+                        <Button
+                          color="#62DF7E"
+                          onClick={() => onAction(item.id, 'conclusion')}
+                        >
+                          Realizada
+                        </Button>
+                      </ButtonContainer>
+                    )}
+                  </>
+                }
               ></Card>
             ))
           )}

@@ -1,13 +1,6 @@
-import {
-  Name,
-  Strong,
-  BackgroundCard,
-  Content,
-  Button,
-  ButtonContainer,
-} from './styled';
+import { Name, Strong, BackgroundCard, Content } from './styled';
 
-const Card = ({ name, lastName, phone, email, type, date }) => (
+const Card = ({ name, lastName, phone, email, date, buttons }) => (
   <BackgroundCard>
     <Name>
       {name} {lastName}
@@ -21,18 +14,7 @@ const Card = ({ name, lastName, phone, email, type, date }) => (
     <Content>
       Data: <Strong>{date}</Strong>
     </Content>
-    {type === 'pending' && (
-      <ButtonContainer>
-        <Button color="#e4b716">Rejeitar</Button>
-        <Button color="#62DF7E">Confirmar</Button>
-      </ButtonContainer>
-    )}
-    {type === 'confirmed' && (
-      <ButtonContainer>
-        <Button color="#E46016">Cancelar</Button>
-        <Button color="#62DF7E">Realizada</Button>
-      </ButtonContainer>
-    )}
+    {buttons}
   </BackgroundCard>
 );
 
