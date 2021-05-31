@@ -29,7 +29,12 @@ const Dashboard = () => {
   const [items, setItems] = useState([]);
   const history = useHistory();
 
-  const filteredItems = items.filter((item) => item.status === status);
+  const filteredItems = items.filter((item) => {
+    if (status === 'canceled') {
+      return item.status === 'canceled' || item.status === 'canceled_by_pro';
+    }
+    return item.status === status;
+  });
   const pendingItems = items.filter((item) => item.status === 'pending').length;
   const getItems = () => {
     const id = localStorage.getItem('id');
