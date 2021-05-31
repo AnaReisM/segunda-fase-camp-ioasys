@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-
-const mobileSize = '720px';
+import { mobileSize } from '../../screenSizes';
 
 export const StyledHeader = styled.header`
   width: 100%;
@@ -31,4 +30,10 @@ export const HeaderText = styled.span`
   font-weight: bold;
   margin-right: 30px;
   color: #2e2e2e;
+
+  @media (max-width: ${mobileSize}) {
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+  }
 `;

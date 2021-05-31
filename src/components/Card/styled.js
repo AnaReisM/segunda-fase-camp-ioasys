@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mobileSize } from '../../screenSizes';
 
 export const Name = styled.p`
   font-weight: 800;
@@ -17,6 +18,11 @@ export const BackgroundCard = styled.div`
   border: 1px solid #7000ff;
   border-radius: 30px;
   margin: 30px;
+
+  @media (max-width: ${mobileSize}) {
+    margin: 20px 0 0 0;
+    width: 100%;
+  }
 `;
 
 export const Content = styled.p`

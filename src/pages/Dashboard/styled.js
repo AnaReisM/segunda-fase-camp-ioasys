@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
-const mobileSize = '720px';
+import { mobileSize } from '../../screenSizes';
 
 export const HeaderButtonContainer = styled.div`
   display: flex;
@@ -32,6 +31,9 @@ export const Container = styled.div`
   background-color: #d1dbff;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
   padding: 24px;
+
+  @media (max-width: ${mobileSize}) {
+  }
 `;
 
 export const PillContainer = styled.div`
@@ -52,6 +54,10 @@ export const Message = styled.div`
   margin-left: 24px;
   margin-right: 73px;
   margin-top: 40px;
+
+  @media (max-width: ${mobileSize}) {
+    margin: 5px;
+  }
 `;
 
 export const Title = styled.h3`

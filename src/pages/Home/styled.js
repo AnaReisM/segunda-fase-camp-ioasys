@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import background from './rectangle.png';
-
-const mobileSize = '720px';
+import { mobileSize } from '../../screenSizes';
 
 export const Background = styled.div`
   background-image: url('/Rectangle 2.png');
@@ -35,12 +34,16 @@ export const StyledVector = styled.img`
 export const PillMargin = styled.div`
   button {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    @media (max-width: ${mobileSize}) {
+      margin: 0 20px;
+    }
   }
 
   @media (max-width: ${mobileSize}) {
     display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 `;
 
@@ -64,6 +67,7 @@ export const Hero = styled.section`
   @media (max-width: ${mobileSize}) {
     flex-direction: column;
     align-items: center;
+    padding: 40px;
   }
 `;
 
@@ -72,7 +76,7 @@ export const Title = styled.h1`
   font-weight: 400;
 
   @media (max-width: ${mobileSize}) {
-    font-size: 42px;
+    font-size: 30px;
   }
 `;
 
@@ -80,6 +84,10 @@ export const HeroText = styled.p`
   font-size: 30px;
   margin-bottom: 20px;
   margin-top: 40px;
+
+  @media (max-width: ${mobileSize}) {
+    font-size: 18px;
+  }
 `;
 
 export const Text = styled.p`

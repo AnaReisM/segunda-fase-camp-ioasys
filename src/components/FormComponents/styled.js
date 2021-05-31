@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-
-const mobileSize = '720px';
+import { mobileSize } from '../../screenSizes';
 
 export const Header = styled.header`
   width: 100%;
