@@ -18,6 +18,7 @@ import {
   Quest,
   TitleFaq,
   Answers,
+  ContentCenter,
 } from './styled';
 import Header from '../../components/Header';
 import google from './googleplay.png';
@@ -70,48 +71,55 @@ const Home = () => (
     </Hero>
     <SectionText>
       <ContentWrapper>
-        <Text>
-          <strong>Como a consul.t funciona?</strong>
-        </Text>
-        <Description>
-          <p>
-            Profissionais da área de psicologia podem se cadastrar no nosso
-            site, o cadastro passará por uma análise e, se aprovado, estará
-            listado no nosso aplicativo.
-          </p>{' '}
-          <p>
-            Se você busca uma consulta psicológica, você encontrará no nosso app
-            a lista de profissionais e lá você pode solicitar uma consulta.
-            Depois é só aguardar que o profissional entrará em contato com você!
-          </p>{' '}
-          <p>
-            Após a consulta você tem a opção de mandar um feedback pra gente,
-            queremos sempre melhorar!
-          </p>
-        </Description>
+        <ContentCenter>
+          <Text>
+            <strong>Como a consul.t funciona?</strong>
+          </Text>
+          <Description>
+            <p>
+              Profissionais da área de psicologia podem se cadastrar no nosso
+              site, o cadastro passará por uma análise e, se aprovado, estará
+              listado no nosso aplicativo.
+            </p>{' '}
+            <p>
+              Se você busca uma consulta psicológica, você encontrará no nosso
+              app a lista de profissionais e lá você pode solicitar uma
+              consulta. Depois é só aguardar que o profissional entrará em
+              contato com você!
+            </p>{' '}
+            <p>
+              Após a consulta você tem a opção de mandar um feedback pra gente,
+              queremos sempre melhorar!
+            </p>
+          </Description>
+        </ContentCenter>
       </ContentWrapper>
     </SectionText>
     <Faq>
-      <TitleFaq>Perguntas Frequentes</TitleFaq>
-      <Quest>Não tenho condições para me consultar, o que eu faço?</Quest>
-      <Answers>
-        Estamos estudando a melhor forma de oferecer consultas a preço social,
-        depois de se cadastrar no aplicativo, mande um e-mail para
-        <b> contato@consult.com</b> com seu nome, telefone e assunto “consulta
-        social”.
-      </Answers>
-      <Quest>O profissional não entrou em contato comigo, como proceder?</Quest>
-      <Answers>
-        O profissional, após solicitado, tem o período de 1 dia útil para mudar
-        o status da consulta, se não houver a mudança, a solicitação será
-        cancelada.
-      </Answers>
-      <Quest>Quais profissionais encontro no app da consul.t?</Quest>
-      <Answers>
-        Por enquanto, estamos apenas aceitando cadastro de profissionais da área
-        de psicologia. Em breve, expandiremos para todos os profissionais da
-        área da saúde.
-      </Answers>
+      <ContentCenter>
+        <TitleFaq>Perguntas Frequentes</TitleFaq>
+        <Quest>Não tenho condições para me consultar, o que eu faço?</Quest>
+        <Answers>
+          Estamos estudando a melhor forma de oferecer consultas a preço social,
+          depois de se cadastrar no aplicativo, mande um e-mail para
+          <b> contato@consult.com</b> com seu nome, telefone e assunto “consulta
+          social”.
+        </Answers>
+        <Quest>
+          O profissional não entrou em contato comigo, como proceder?
+        </Quest>
+        <Answers>
+          O profissional, após solicitado, tem o período de 1 dia útil para
+          mudar o status da consulta, se não houver a mudança, a solicitação
+          será cancelada.
+        </Answers>
+        <Quest>Quais profissionais encontro no app da consul.t?</Quest>
+        <Answers>
+          Por enquanto, estamos apenas aceitando cadastro de profissionais da
+          área de psicologia. Em breve, expandiremos para todos os profissionais
+          da área da saúde.
+        </Answers>
+      </ContentCenter>
     </Faq>
     <Footer></Footer>
   </Background>

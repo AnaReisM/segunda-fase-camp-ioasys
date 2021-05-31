@@ -184,7 +184,7 @@ const Dashboard = () => {
                       <ButtonContainer>
                         <Button
                           color="#E46016"
-                          onClick={() => onAction(item.id, 'cancel')}
+                          onClick={() => onAction(item.id, 'cancellation')}
                         >
                           Cancelar
                         </Button>

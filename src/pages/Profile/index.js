@@ -12,15 +12,15 @@ import {
 } from '../../components/FormComponents/styled';
 import notification from '../Dashboard/notification.png';
 import people from '../Dashboard/people.png';
+import { PillContainer, Warning } from './styled';
 import {
-  PillContainer,
   HeaderButton,
   HeaderButtonText,
   HeaderButtonContainer,
-  Warning,
-} from './styled';
+} from '../Dashboard/styled';
 import { CheckContainer, CheckUp, CheckDown } from '../Register2/styled';
 import Checkbox from '../../components/Checkbox';
+import Radio from '../../components/Radio';
 import Footer from '../../components/Footer';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
@@ -32,8 +32,7 @@ const Profile = () => {
   const [email, setEmail] = useState('');
   const [crp, setCrp] = useState('');
   const [biography, setBiography] = useState('');
-  const [cityBH, setCityBH] = useState(false);
-  const [citySP, setCitySP] = useState(false);
+  const [city, setCity] = useState('');
   const [cityRemote, setCityRemote] = useState(false);
   const [blocked, setBlocked] = useState(true);
   const history = useHistory();
@@ -55,6 +54,7 @@ const Profile = () => {
         setCrp(response.data.professional.crp);
         setBiography(response.data.professional.biography);
         setCityRemote(response.data.professional.remotely);
+        setCity(response.data.professional.city);
       })
       .catch(() => {
         logout();
@@ -77,6 +77,7 @@ const Profile = () => {
             email,
             remotely: cityRemote,
             biography,
+            city,
           },
         },
         {
@@ -193,18 +194,22 @@ const Profile = () => {
             ></Input>
             <CheckContainer>
               <CheckUp>
-                <Checkbox
+                <Radio
                   disabled={blocked}
                   label="Belo Horizonte"
-                  checked={cityBH}
-                  onChange={(e) => setCityBH(e.target.checked)}
-                ></Checkbox>
-                <Checkbox
+                  checked={city === 'Belo Horizonte'}
+                  onClick={() =>
+                    setCity(city === 'Belo Horizonte' ? '' : 'Belo Horizonte')
+                  }
+                ></Radio>
+                <Radio
                   disabled={blocked}
                   label="São Paulo"
-                  checked={citySP}
-                  onChange={(e) => setCitySP(e.target.checked)}
-                ></Checkbox>
+                  checked={city === 'São Paulo'}
+                  onClick={() =>
+                    setCity(city === 'São Paulo' ? '' : 'São Paulo')
+                  }
+                ></Radio>
               </CheckUp>
               <CheckDown>
                 <Checkbox

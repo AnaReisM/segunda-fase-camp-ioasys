@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-//const mobileSize = '720px';
+const mobileSize = '720px';
 
 export const HeaderButtonContainer = styled.div`
   display: flex;
@@ -18,6 +18,10 @@ export const HeaderButton = styled(Link)`
   justify-content: center;
   flex-direction: column;
   text-decoration: none;
+
+  @media (max-width: ${mobileSize}) {
+    width: 90px;
+  }
 `;
 
 export const Container = styled.div`

@@ -33,7 +33,7 @@ export const Background = styled.div`
 `;
 
 export const Container = styled.div`
-  padding: 50px 5%;
+  padding: 50px 20px;
 
   @media (min-width: 720px) {
     ${(props) =>

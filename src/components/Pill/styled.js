@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+const mobileSize = '720px';
+
 export const ButtonMenu = styled.button`
   cursor: pointer;
   border: 1px solid ${(props) => props.color};
@@ -14,6 +16,12 @@ export const ButtonMenu = styled.button`
   background-color: ${(props) => (props.active ? props.color : '#FEFEFE')};
   filter: ${(props) =>
     !props.active ? 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))' : ''};
+
+  @media (max-width: ${mobileSize}) {
+    min-width: 90px;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
 `;
 
 export const Count = styled.div`

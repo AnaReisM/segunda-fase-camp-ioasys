@@ -19,12 +19,12 @@ import { CheckContainer, CheckDown, CheckUp } from './styled';
 import Footer from '../../components/Footer';
 import Pill from '../../components/Pill';
 import { StyledVector } from '../Home/styled';
+import Radio from '../../components/Radio';
 
 const Login = () => {
   const [experience, setExperience] = useState('');
   const [biography, setBiography] = useState('');
-  const [cityBH, setCityBH] = useState(false);
-  const [citySP, setCitySP] = useState(false);
+  const [city, setCity] = useState('');
   const [cityRemote, setCityRemote] = useState(false);
   const [error, setError] = useState(false);
 
@@ -42,7 +42,7 @@ const Login = () => {
         email: location.state.email,
         professionalField: 'Cardiologist',
         password: location.state.password,
-        city: 'São Paulo',
+        city,
         crp: location.state.crp,
         remotely: cityRemote,
         experience,
@@ -75,16 +75,18 @@ const Login = () => {
           <Label>Onde você atende?</Label>
           <CheckContainer>
             <CheckUp>
-              <Checkbox
+              <Radio
                 label="Belo Horizonte"
-                checked={cityBH}
-                onChange={(e) => setCityBH(e.target.checked)}
-              ></Checkbox>
-              <Checkbox
+                checked={city === 'Belo Horizonte'}
+                onClick={() =>
+                  setCity(city === 'Belo Horizonte' ? '' : 'Belo Horizonte')
+                }
+              ></Radio>
+              <Radio
                 label="São Paulo"
-                checked={citySP}
-                onChange={(e) => setCitySP(e.target.checked)}
-              ></Checkbox>
+                checked={city === 'São Paulo'}
+                onClick={() => setCity(city === 'São Paulo' ? '' : 'São Paulo')}
+              ></Radio>
             </CheckUp>
             <CheckDown>
               <Checkbox

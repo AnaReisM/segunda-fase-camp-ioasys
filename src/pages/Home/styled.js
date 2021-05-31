@@ -148,10 +148,22 @@ export const ContentWrapper = styled.div`
   background: #fefefe;
   box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.5);
   border-radius: 0px 170px;
-  padding: 48px 28%;
+  padding: 48px 5%;
 
   @media (max-width: ${mobileSize}) {
     width: 100%;
+  }
+`;
+
+export const ContentCenter = styled.div`
+  width: 500px;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 40px 0;
+
+  @media (min-width: ${mobileSize}) {
+    width: 700px;
+    padding: 0;
   }
 `;
 
@@ -166,7 +178,7 @@ export const Description = styled.div`
 
 export const Faq = styled.section`
   width: 100%;
-  padding: 60px 30%;
+  padding: 60px 5%;
 `;
 
 export const TitleFaq = styled.h2`
