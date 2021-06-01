@@ -6,7 +6,8 @@
 🌱 MVP (Mininum Viable Product) 🌱
 </h4>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/mBBIuYdHh3M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=mBBIuYdHh3M" target="_blank"><img src="http://img.youtube.com/vi/mBBIuYdHh3M/0.jpg" 
+alt="Video demonstrativo do consul.t web" width="240" height="180" border="10" /></a>
 
 ### Features
 
