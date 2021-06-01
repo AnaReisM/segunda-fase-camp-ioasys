@@ -6,8 +6,7 @@
 🌱 MVP (Mininum Viable Product) 🌱
 </h4>
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=mBBIuYdHh3M" target="_blank"><img src="http://img.youtube.com/vi/mBBIuYdHh3M/0.jpg" 
-alt="Video demonstrativo do consul.t web" width="240" height="180" border="10" /></a>
+<img src="https://github.com/AnaReisM/segunda-fase-camp-ioasys/blob/main/public/gif.gif?raw=true"/>
 
 ### Features
 
