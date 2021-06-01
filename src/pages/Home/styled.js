@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import background from './rectangle.png';
+import backgroundMobile from './backgroundMobile.png';
 import { mobileSize } from '../../screenSizes';
+import backgroundMobile2 from './backgroundMobile2.png';
 
 export const Background = styled.div`
   background-image: url('/Rectangle 2.png');
@@ -9,6 +11,12 @@ export const Background = styled.div`
   background-position: top right;
   background-size: 500px;
   min-height: 100vh;
+
+  @media (max-width: ${mobileSize}) {
+    background-image: url('${backgroundMobile2}');
+    background-position: 40% 7%;
+    background-size: 450px;
+  }
 `;
 
 export const Header = styled.header`
@@ -65,9 +73,8 @@ export const Hero = styled.section`
   justify-content: space-between;
 
   @media (max-width: ${mobileSize}) {
-    flex-direction: column;
     align-items: center;
-    padding: 40px;
+    padding: 40px 10px;
   }
 `;
 
@@ -76,7 +83,9 @@ export const Title = styled.h1`
   font-weight: 400;
 
   @media (max-width: ${mobileSize}) {
-    font-size: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fefefe;
   }
 `;
 
@@ -87,6 +96,7 @@ export const HeroText = styled.p`
 
   @media (max-width: ${mobileSize}) {
     font-size: 18px;
+    color: #fefefe;
   }
 `;
 
@@ -100,6 +110,10 @@ export const Text = styled.p`
       return 'text-align: center;';
     }
   }}
+
+  @media (max-width: ${mobileSize}) {
+    color: #fefefe;
+  }
 `;
 
 export const Content = styled.div`
@@ -108,6 +122,7 @@ export const Content = styled.div`
 
   @media (max-width: ${mobileSize}) {
     width: 100%;
+    margin-right: 10px;
   }
 `;
 
@@ -116,16 +131,21 @@ export const PhoneContainer = styled.div`
   text-align: center;
 
   @media (max-width: ${mobileSize}) {
-    width: 100%;
+    width: 70%;
   }
 `;
 
 export const PhoneImg = styled.img`
   margin-bottom: 40px;
   max-width: 100%;
+
+  @media (max-width: ${mobileSize}) {
+    margin-bottom: 20px;
+  }
 `;
 
 export const Button = styled.img`
+  max-width: 100%;
   width: 200px;
   margin-left: 12px;
 
@@ -148,6 +168,8 @@ export const SectionText = styled.section`
 
   @media (max-width: 720px) {
     height: auto;
+    background-image: url('${backgroundMobile}');
+    margin-top: 140px;
   }
 `;
 
@@ -160,6 +182,9 @@ export const ContentWrapper = styled.div`
 
   @media (max-width: ${mobileSize}) {
     width: 100%;
+    background: none;
+    box-shadow: none;
+    color: #fefefe;
   }
 `;
 
